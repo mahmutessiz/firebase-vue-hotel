@@ -13,7 +13,7 @@
         {{ room.roomId }} <br />
         <button
           id="delete-button"
-          class="cursor-pointer rounded-md bg-red-500 px-2 py-1 text-white shadow-md"
+          class="z-10 cursor-pointer rounded-md bg-red-500 px-2 py-1 text-white shadow-md"
           @click="() => deleteRoom(room.roomId)"
         >
           deleteRoom
