@@ -32,13 +32,17 @@ import { onMounted, ref } from 'vue'
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
 import { db } from '@/firebase'
 
-let rooms = ref([])
 /**
- * Order room by room numbers
+ * !Order room by room numbers
  */
 function sortByRoomNumber(arr) {
   return arr.sort((a, b) => a.roomNumber - b.roomNumber)
 }
+
+/**
+ * !Get room information from the server
+ */
+let rooms = ref([])
 
 onMounted(async () => {
   const roomSnapshot = await getDocs(collection(db, 'rooms'))
@@ -52,11 +56,8 @@ onMounted(async () => {
   rooms.value = sortByRoomNumber(rooms.value)
 })
 
-/* const deleteRoom = async () => {
-  const deleteButton = document.querySelector('#delete-button')
-  console.log(deleteButton.parentElement.innerText)
-   await deleteDoc(doc(db, 'rooms', 'v9tiAXr0UwNspva5prRP'), err => {console.log(err);})
-}
+/**
+ * !Delete room function
  */
 const deleteRoom = async (roomId) => {
   try {
