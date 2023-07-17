@@ -30,7 +30,13 @@ import { onMounted, ref } from 'vue'
  * !Firebase
  */
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
-import { db } from '@/firebase'
+import { db, auth } from '@/firebase'
+import { onAuthStateChanged } from 'firebase/auth'
+
+/**
+ * !Get room information from the server
+ */
+let rooms = ref([])
 
 /**
  * !Order room by room numbers
@@ -38,23 +44,28 @@ import { db } from '@/firebase'
 function sortByRoomNumber(arr) {
   return arr.sort((a, b) => a.roomNumber - b.roomNumber)
 }
-
 /**
- * !Get room information from the server
+ * !listen user login status
  */
-let rooms = ref([])
-
-onMounted(async () => {
-  const roomSnapshot = await getDocs(collection(db, 'rooms'))
-  roomSnapshot.forEach((doc) => {
-    rooms.value.push({
-      roomId: doc.id,
-      isOccupied: doc.data().isOccupied,
-      roomNumber: doc.data()['room number']
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    const roomSnapshot = await getDocs(collection(db, 'rooms'))
+    roomSnapshot.forEach((doc) => {
+      rooms.value.push({
+        roomId: doc.id,
+        isOccupied: doc.data().isOccupied,
+        roomNumber: doc.data()['room number']
+      })
     })
-  })
-  rooms.value = sortByRoomNumber(rooms.value)
+    rooms.value = sortByRoomNumber(rooms.value)
+    console.log('user status signed in', user)
+  } else {
+    rooms.value = []
+    console.log('user sign out')
+  }
 })
+
+onMounted(async () => {})
 
 /**
  * !Delete room function

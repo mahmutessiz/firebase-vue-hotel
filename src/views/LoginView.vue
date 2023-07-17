@@ -25,20 +25,8 @@
  * !Firebase
  */
 /* import {  doc, addDoc } from 'firebase/firestore' */
-import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/firebase'
-
-/**
- * !listen user login status
- */
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    console.log('user status signed in', user)
-  } else {
-    console.log('user sign out')
-  }
-})
 
 const logIn = (e) => {
   // Sign in a user
