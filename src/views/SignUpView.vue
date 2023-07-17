@@ -1,6 +1,6 @@
 <template>
   <div class="grid min-h-screen w-full place-content-center">
-    <form action="" class="flex flex-col gap-2" @submit="logIn" id="form">
+    <form action="" class="flex flex-col gap-2" @submit="signIn" id="form">
       <label for="email">e-mail</label>
       <input
         type="email"
@@ -25,32 +25,31 @@
  * !Firebase
  */
 /* import {  doc, addDoc } from 'firebase/firestore' */
-import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/firebase'
 
-/**
- * !listen user login status
- */
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    console.log('user status signed in', user)
-  } else {
-    console.log('user sign out')
-  }
-})
-
-const logIn = (e) => {
-  // Sign in a user
+const signIn = (e) => {
+  // Create a new user
   e.preventDefault()
   const form = document.querySelector('#form')
-  const email = form['email'].value
-  const password = form['password'].value
+  let email = form['email'].value
+  let password = form['password'].value
   console.log(email, password)
 
-  // Sign in the user in Firebase Auth
-  signInWithEmailAndPassword(auth, email, password).catch((error) => {
-    console.log('Error creating user:', error)
-  })
+  // Create the user in Firebase Auth
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((user) => {
+      console.log('User created:', user, user.user.uid)
+      // Create a document in the users collection
+
+      /* addDoc(doc(db, 'hotels', user.uid), {
+          name: user.displayName,
+          email: user.email,
+          createdAt: new Date()
+        }) */
+    })
+    .catch((error) => {
+      console.log('Error creating user:', error)
+    })
 }
 </script>
