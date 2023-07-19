@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 
 /**
  * !Firebase
@@ -64,8 +64,6 @@ onAuthStateChanged(auth, async (user) => {
     console.log('user sign out')
   }
 })
-
-onMounted(async () => {})
 
 /**
  * !Delete room function

@@ -24,9 +24,9 @@
 /**
  * !Firebase
  */
-/* import {  doc, addDoc } from 'firebase/firestore' */
+import { doc, setDoc } from 'firebase/firestore'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '@/firebase'
+import { auth, db } from '@/firebase'
 
 const signIn = (e) => {
   // Create a new user
@@ -38,15 +38,16 @@ const signIn = (e) => {
 
   // Create the user in Firebase Auth
   createUserWithEmailAndPassword(auth, email, password)
-    .then((user) => {
+    .then(async (user) => {
       console.log('User created:', user, user.user.uid)
+      let userId = user.user.uid
       // Create a document in the users collection
 
-      /* addDoc(doc(db, 'hotels', user.uid), {
-          name: user.displayName,
-          email: user.email,
-          createdAt: new Date()
-        }) */
+      await setDoc(doc(db, 'hotels', userId), {
+        name: user.user.displayName,
+        email: user.user.email,
+        createdAt: new Date()
+      })
     })
     .catch((error) => {
       console.log('Error creating user:', error)
