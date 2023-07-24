@@ -43,7 +43,7 @@ const signIn = (e) => {
       let userId = user.user.uid
       // Create a document in the users collection
 
-      await setDoc(doc(db, 'hotels', userId), {
+      await setDoc(doc(db, userId, 'rooms'), {
         name: user.user.displayName,
         email: user.user.email,
         createdAt: new Date()
