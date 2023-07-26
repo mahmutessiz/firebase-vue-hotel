@@ -43,10 +43,11 @@ const signIn = (e) => {
       let userId = user.user.uid
       // Create a document in the users collection
 
-      await setDoc(doc(db, userId, 'rooms'), {
+      await setDoc(doc(db, userId, 'deneme'), {
         name: user.user.displayName,
         email: user.user.email,
-        createdAt: new Date()
+        createdAt: new Date(),
+        roomNumber: '3099'
       })
     })
     .catch((error) => {

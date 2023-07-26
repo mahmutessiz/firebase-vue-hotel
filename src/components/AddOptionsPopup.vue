@@ -18,15 +18,29 @@
  * !Firebase
  */
 import { collection, addDoc } from 'firebase/firestore'
-import { db } from '@/firebase'
+import { db, auth } from '@/firebase'
+import { onAuthStateChanged } from 'firebase/auth'
 
+let currentUser = null
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    currentUser = user.uid
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+})
 function addRoom() {
   const isOccupiedInput = document.querySelector('#isOccupied')
   const roomNumber = document.querySelector('#room-number')
 
-  addDoc(collection(db, 'rooms'), {
+  addDoc(collection(db, currentUser), {
     isOccupied: isOccupiedInput.value,
-    'room number': roomNumber.value
+    roomNumber: roomNumber.value
   })
 }
 </script>

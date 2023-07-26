@@ -14,7 +14,7 @@
         <button
           id="delete-button"
           class="z-10 cursor-pointer rounded-md bg-red-500 px-2 py-1 text-white shadow-md"
-          @click="() => deleteRoom(room.roomId)"
+          @click="() => deleteRoom(userUid, room.roomId)"
         >
           deleteRoom
         </button>
@@ -37,6 +37,7 @@ import { onAuthStateChanged } from 'firebase/auth'
  * !Get room information from the server
  */
 let rooms = ref([])
+let userUid = ref('')
 
 /**
  * !Order room by room numbers
@@ -49,16 +50,17 @@ function sortByRoomNumber(arr) {
  */
 onAuthStateChanged(auth, async (user) => {
   if (user) {
-    const roomSnapshot = await getDocs(collection(db, 'rooms'))
+    const roomSnapshot = await getDocs(collection(db, user.uid))
     roomSnapshot.forEach((doc) => {
       rooms.value.push({
         roomId: doc.id,
         isOccupied: doc.data().isOccupied,
-        roomNumber: doc.data()['room number']
+        roomNumber: doc.data().roomNumber
       })
     })
     rooms.value = sortByRoomNumber(rooms.value)
-    console.log('user status signed in', user)
+    userUid.value = user.uid
+    console.log('user status signed in', user.uid)
   } else {
     rooms.value = []
     console.log('user sign out')
@@ -68,9 +70,9 @@ onAuthStateChanged(auth, async (user) => {
 /**
  * !Delete room function
  */
-const deleteRoom = async (roomId) => {
+const deleteRoom = async (userId, roomId) => {
   try {
-    await deleteDoc(doc(db, 'rooms', roomId))
+    await deleteDoc(doc(db, userId, roomId))
   } catch (err) {
     console.error(err)
   }
