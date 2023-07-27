@@ -14,19 +14,22 @@
         class="rounded-md border border-black px-2 shadow-sm shadow-black/20"
       />
       <button class="rounded-md bg-gray-600 px-2 py-1 text-white hover:bg-slate-700">
-        sign in
+        sign up
       </button>
     </form>
   </div>
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 /**
  * !Firebase
  */
 import { doc, setDoc } from 'firebase/firestore'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth, db } from '@/firebase'
+
+const router = useRouter()
 
 const signIn = (e) => {
   // Create a new user
@@ -48,6 +51,8 @@ const signIn = (e) => {
         email: user.user.email,
         createdAt: new Date(),
         roomNumber: '3099'
+      }).then(() => {
+        router.push('/')
       })
     })
     .catch((error) => {

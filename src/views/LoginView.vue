@@ -21,12 +21,15 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 /**
  * !Firebase
  */
 /* import {  doc, addDoc } from 'firebase/firestore' */
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/firebase'
+
+const router = useRouter()
 
 const logIn = (e) => {
   // Sign in a user
@@ -37,8 +40,12 @@ const logIn = (e) => {
   console.log(email, password)
 
   // Sign in the user in Firebase Auth
-  signInWithEmailAndPassword(auth, email, password).catch((error) => {
-    console.log('Error creating user:', error)
-  })
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      router.push('/')
+    })
+    .catch((error) => {
+      console.log('Error creating user:', error)
+    })
 }
 </script>
