@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full bg-green-300 px-2 py-4">
-    <ul class="flex w-full flex-wrap gap-4">
+  <div class="flex w-full flex-col items-center justify-center bg-green-300 px-2 py-4">
+    <ul class="flex flex-wrap justify-center gap-4 p-4">
       <li
         v-for="room in rooms"
         :key="room"
