@@ -37,7 +37,6 @@ const logIn = (e) => {
   const form = document.querySelector('#form')
   const email = form['email'].value
   const password = form['password'].value
-  console.log(email, password)
 
   // Sign in the user in Firebase Auth
   signInWithEmailAndPassword(auth, email, password)
