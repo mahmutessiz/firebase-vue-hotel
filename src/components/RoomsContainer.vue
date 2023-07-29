@@ -1,10 +1,10 @@
 <template>
-  <div class="flex w-full flex-col items-center justify-center bg-green-300 px-2 py-4">
+  <div class="flex w-full flex-col items-center justify-center bg-green-500 px-2 py-4">
     <ul class="flex flex-wrap justify-center gap-4 p-4">
       <li
         v-for="room in rooms"
         :key="room"
-        class="relative grid h-60 w-60 place-items-center border-2"
+        class="relative grid h-80 w-72 place-items-center overflow-hidden rounded-md bg-white shadow-lg shadow-black/40"
       >
         <div class="absolute h-full w-full bg-slate-500/50" v-if="room.isOccupied == 'true'"></div>
         <div class="absolute h-full w-full bg-blue-500/50" v-if="room.isOccupied == 'false'"></div>
