@@ -22,10 +22,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-/**
- * !Firebase
- */
-/* import {  doc, addDoc } from 'firebase/firestore' */
+
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/firebase'
 
