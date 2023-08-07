@@ -29,8 +29,6 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
-import AddOptionsPopup from './AddOptionsPopup.vue'
 
 import { signOut } from 'firebase/auth'
 import { auth } from '@/firebase'
