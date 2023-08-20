@@ -25,7 +25,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import WelcomePageNotLoggedIn from './WelcomePageNotLoggedIn.vue'
 
 // Firebase imports
 import { collection, deleteDoc, doc, onSnapshot } from 'firebase/firestore'
