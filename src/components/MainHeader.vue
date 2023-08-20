@@ -46,6 +46,7 @@
 </template>
 
 <script setup>
+import AddOptionsPopup from './AddOptionsPopup.vue';
 import { ref } from 'vue';
 import { signOut, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/firebase'
