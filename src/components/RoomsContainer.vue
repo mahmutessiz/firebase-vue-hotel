@@ -40,9 +40,8 @@ function sortByRoomNumber(arr) {
   return arr.sort((a, b) => a.roomNumber - b.roomNumber)
 }
 
-/**
- * !listen user login status
- */
+// listen user login status
+
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     const roomRef = collection(db, user.uid)
@@ -64,9 +63,7 @@ onAuthStateChanged(auth, async (user) => {
   }
 })
 
-/**
- * !Delete room function
- */
+// Delete room function
 const deleteRoom = async (userId, roomId) => {
   try {
     await deleteDoc(doc(db, userId, roomId))
