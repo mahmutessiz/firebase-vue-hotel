@@ -1,8 +1,11 @@
 <template>
   <header class="w-full">
     <div class="flex w-full justify-end gap-4 px-4 py-2" v-if="isLoggedIn == true">
-      <button class="h-fit w-fit rounded-full hover:shadow-lg hover:shadow-black/50" title="add room"
-        @click="showHidePopup">
+      <button
+        class="h-fit w-fit rounded-full hover:shadow-lg hover:shadow-black/50"
+        title="add room"
+        @click="showHidePopup"
+      >
         <img src="../assets/addIcon.svg" alt="add button" />
       </button>
       <AddOptionsPopup id="popup-menu-add" class="hidden" />
@@ -26,37 +29,40 @@
     </div>
 
     <div class="flex w-full justify-end px-4 py-2" v-if="isLoggedIn == false">
-
       <ul class="flex w-full items-center justify-end gap-4 px-4 py-2">
         <li class="cursor-pointer">
-          <RouterLink to="/"
-            class="bg-gray-100 py-1 hover:shadow-md transition-all duration-200 px-2 rounded-md shadow-sm shadow-black/50 text-lg">
-            Home</RouterLink>
+          <RouterLink
+            to="/"
+            class="rounded-md bg-gray-100 px-2 py-1 text-lg shadow-sm shadow-black/50 transition-all duration-200 hover:shadow-md"
+          >
+            Home</RouterLink
+          >
         </li>
         <li>
-          <RouterLink to="/login"
-            class="bg-green-500 py-1 hover:bg-green-600 transition-all duration-200 px-2 rounded-md shadow-sm shadow-black/50 text-lg">
-            Sign in</RouterLink>
+          <RouterLink
+            to="/login"
+            class="rounded-md bg-green-500 px-2 py-1 text-lg shadow-sm shadow-black/50 transition-all duration-200 hover:bg-green-600"
+          >
+            Sign in</RouterLink
+          >
         </li>
       </ul>
-
-
     </div>
   </header>
 </template>
 
 <script setup>
-import AddOptionsPopup from './AddOptionsPopup.vue';
-import { ref } from 'vue';
+import AddOptionsPopup from './AddOptionsPopup.vue'
+import { ref } from 'vue'
 import { signOut, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/firebase'
-import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router'
 
 /* Popup component visibility */
 
 //listen user login status
 
-const isLoggedIn = ref();
+const isLoggedIn = ref()
 onAuthStateChanged(auth, (user) => {
   if (user) {
     isLoggedIn.value = true
