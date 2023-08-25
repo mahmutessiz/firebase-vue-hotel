@@ -4,7 +4,7 @@
       <li
         v-for="room in rooms"
         :key="room"
-        class="relative h-80 w-72 overflow-hidden rounded-md bg-white shadow-lg shadow-black/40"
+        class="relative flex h-80 w-72 flex-wrap justify-center overflow-hidden rounded-md bg-white shadow-lg shadow-black/40"
       >
         <!-- Dropdon button -->
         <button class="absolute left-[80%] top-2 z-50 cursor-pointer" @click="showHideMenu">
@@ -15,10 +15,10 @@
           <div class="z-40 hidden gap-4 py-12" id="showHideContainer">
             <button
               id="delete-button"
-              class="z-10 cursor-pointer rounded-md bg-red-500 px-2 py-1 text-white shadow-md"
+              class="z-10 cursor-pointer"
               @click="() => deleteRoom(userUid, room.roomId)"
             >
-              <img src="../assets/thrash.svg" alt="delete room button" title="delete room">
+              <img src="../assets/thrash.svg" alt="delete room button" title="delete room" />
             </button>
 
             <button @click="statusPopup(room.roomId)" class="z-40 cursor-pointer">
@@ -48,7 +48,6 @@
         <div class="absolute h-full w-full bg-blue-500/50" v-if="room.isOccupied == 'false'"></div>
         {{ room.roomNumber }} <br />
         {{ room.isOccupied }} <br />
-        {{ room.roomId }} <br />
       </li>
     </ul>
   </div>
