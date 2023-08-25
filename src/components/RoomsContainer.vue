@@ -1,39 +1,46 @@
 <template>
   <div class="flex w-full flex-col items-center justify-center bg-green-500 px-2 py-4">
-    <ul class="flex flex-wrap justify-center gap-4 p-4">
+    <ul class="flex flex-wrap items-center justify-center gap-4 p-4">
       <li
         v-for="room in rooms"
         :key="room"
-        class="relative flex h-80 w-72 items-center justify-center gap-2 overflow-hidden rounded-md bg-white shadow-lg shadow-black/40"
+        class="relative h-80 w-72 overflow-hidden rounded-md bg-white shadow-lg shadow-black/40"
       >
-        <div class="z-50 flex flex-col">
-          <button
-            id="delete-button"
-            class="z-10 cursor-pointer rounded-md bg-red-500 px-2 py-1 text-white shadow-md"
-            @click="() => deleteRoom(userUid, room.roomId)"
-          >
-            Dell
-          </button>
+        <!-- Dropdon button -->
+        <button class="absolute left-[80%] top-2 z-50 cursor-pointer" @click="showHideMenu">
+          <img src="../assets/options.svg" alt="options" />
+        </button>
+        <!-- Options -->
+        <div class="flex w-full justify-end">
+          <div class="z-40 hidden gap-4 py-12" id="showHideContainer">
+            <button
+              id="delete-button"
+              class="z-10 cursor-pointer rounded-md bg-red-500 px-2 py-1 text-white shadow-md"
+              @click="() => deleteRoom(userUid, room.roomId)"
+            >
+              <img src="../assets/thrash.svg" alt="delete room button" title="delete room">
+            </button>
 
-          <button @click="statusPopup(room.roomId)" class="z-40 cursor-pointer">
-            <img src="../assets/options.svg" alt="options" />
-          </button>
-          <!-- Options popup -->
-          <div
-            class="absolute inset-0 z-50 hidden w-full place-items-center bg-white/90"
-            :data-room-id="room.roomId"
-            id="status-form-container"
-          >
-            <form action="" @submit="changeStatus($event, room.roomId)" id="status-form">
-              <p>Please select room status:</p>
-              <input type="radio" id="true" name="room-status" value="true" />
-              <label for="html">Occupied</label><br />
-              <input type="radio" id="false" name="room-status" value="false" />
-              <label for="css">Not Occupied</label><br />
-              <button class="mt-4 rounded-md bg-green-500 px-2 py-1 shadow-sm shadow-black/80">
-                Apply
-              </button>
-            </form>
+            <button @click="statusPopup(room.roomId)" class="z-40 cursor-pointer">
+              <img src="../assets/options.svg" alt="options" />
+            </button>
+            <!-- Options popup -->
+            <div
+              class="absolute inset-0 z-50 hidden w-full place-items-center bg-white/90"
+              :data-room-id="room.roomId"
+              id="status-form-container"
+            >
+              <form action="" @submit="changeStatus($event, room.roomId)" id="status-form">
+                <p>Please select room status:</p>
+                <input type="radio" id="true" name="room-status" value="true" />
+                <label for="html">Occupied</label><br />
+                <input type="radio" id="false" name="room-status" value="false" />
+                <label for="css">Not Occupied</label><br />
+                <button class="mt-4 rounded-md bg-green-500 px-2 py-1 shadow-sm shadow-black/80">
+                  Apply
+                </button>
+              </form>
+            </div>
           </div>
         </div>
 
@@ -123,6 +130,20 @@ const statusPopup = (roomId) => {
   } else if (formPopup.classList.contains('grid')) {
     formPopup.classList.remove('grid')
     formPopup.classList.add('hidden')
+  }
+}
+
+// Show/hide options
+const showHideMenu = (event) => {
+  const button = event.target
+  const dropdownMenu = button.closest('li').querySelector('#showHideContainer')
+
+  if (dropdownMenu.classList.contains('hidden')) {
+    dropdownMenu.classList.remove('hidden')
+    dropdownMenu.classList.add('flex')
+  } else if (dropdownMenu.classList.contains('flex')) {
+    dropdownMenu.classList.remove('flex')
+    dropdownMenu.classList.add('hidden')
   }
 }
 </script>
