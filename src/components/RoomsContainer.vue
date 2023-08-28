@@ -71,19 +71,15 @@ function sortByRoomNumber(arr) {
 }
 
 // listen user login status
-
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     const roomRef = collection(db, user.uid)
     onSnapshot(roomRef, (snapshot) => {
-      rooms.value = []
-      snapshot.forEach((doc) => {
-        rooms.value.push({
-          roomId: doc.id,
-          isOccupied: doc.data().isOccupied,
-          roomNumber: doc.data().roomNumber
-        })
-      })
+      rooms.value = snapshot.docs.map((doc) => ({
+        roomId: doc.id,
+        isOccupied: doc.data().isOccupied,
+        roomNumber: doc.data().roomNumber
+      }))
       rooms.value = sortByRoomNumber(rooms.value)
     })
     userUid.value = user.uid
