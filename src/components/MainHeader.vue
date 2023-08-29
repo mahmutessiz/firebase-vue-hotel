@@ -53,24 +53,17 @@
 
 <script setup>
 import AddOptionsPopup from './AddOptionsPopup.vue'
-import { ref } from 'vue'
-import { signOut, onAuthStateChanged } from 'firebase/auth'
+import { signOut } from 'firebase/auth'
 import { auth } from '@/firebase'
 import { RouterLink } from 'vue-router'
 
-/* Popup component visibility */
+// Composable
+import { useAuthState } from '@/composables/authState'
 
-//listen user login status
+// Listen user login status --> authState.js
+const { isLoggedIn } = useAuthState()
 
-const isLoggedIn = ref()
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    isLoggedIn.value = true
-  } else {
-    isLoggedIn.value = false
-  }
-})
-
+// Popup visibility status
 const showHidePopup = () => {
   const popup = document.querySelector('#popup-menu-add')
   popup.classList.toggle('hidden')

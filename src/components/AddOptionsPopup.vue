@@ -14,9 +14,7 @@
 </template>
 
 <script setup>
-/**
- * !Firebase
- */
+// Firebase
 import { collection, addDoc } from 'firebase/firestore'
 import { db, auth } from '@/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -31,6 +29,8 @@ onAuthStateChanged(auth, (user) => {
     // User is signed out
   }
 })
+
+// Add room to the collection
 function addRoom() {
   const isOccupiedInput = document.querySelector('#isOccupied')
   const roomNumber = document.querySelector('#room-number')
