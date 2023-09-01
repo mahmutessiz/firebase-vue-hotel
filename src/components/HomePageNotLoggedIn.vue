@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-[1440px]">
+  <div class="m-auto w-full max-w-[1440px]">
     <section class="relative max-h-[100vh] w-full overflow-hidden lg:h-[80vh]">
       <div class="flex h-full w-full flex-wrap items-center justify-center gap-4 p-4">
         <p
