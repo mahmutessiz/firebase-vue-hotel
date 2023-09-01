@@ -3,9 +3,9 @@
     <section class="relative max-h-[100vh] w-full overflow-hidden lg:h-[80vh]">
       <div class="flex h-full w-full flex-wrap items-center justify-center gap-4 p-4">
         <p
-          class="rounded-md bg-black/70 p-4 text-center font-mono text-5xl font-bold text-white sm:w-[70%]"
+          class="rounded-md bg-black/70 p-4 text-center font-mono text-3xl font-bold text-white sm:w-[70%] sm:text-5xl md:text-6xl"
         >
-          The best hotel management system
+          The Best Hotel Management System
         </p>
         <div class="bg-black">
           <img
