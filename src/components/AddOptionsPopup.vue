@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute left-[40%] top-28 z-10 m-auto flex h-60 w-60 flex-col items-center border-2 border-black bg-red-500"
+    class="absolute left-[40%] top-28 z-50 m-auto flex h-60 w-60 flex-col items-center border-2 border-black bg-red-500"
   >
     <form action="" class="flex flex-col items-center gap-2">
       <label for="room-number">Room number</label>

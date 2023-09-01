@@ -7,7 +7,7 @@
         class="relative flex h-80 w-72 flex-wrap justify-center overflow-hidden rounded-md bg-white shadow-lg shadow-black/40"
       >
         <!-- Dropdon button -->
-        <button class="absolute left-[80%] top-2 z-50 cursor-pointer" @click="showHideMenu">
+        <button class="absolute left-[80%] top-2 z-40 cursor-pointer" @click="showHideMenu">
           <img src="../assets/options.svg" alt="options" />
         </button>
         <!-- Options -->
@@ -29,7 +29,7 @@
             </button>
             <!-- Options popup -->
             <div
-              class="absolute inset-0 z-50 hidden w-full place-items-center bg-white/90"
+              class="absolute inset-0 z-40 hidden w-full place-items-center bg-white/90"
               :data-room-id="room.roomId"
               id="status-form-container"
             >
