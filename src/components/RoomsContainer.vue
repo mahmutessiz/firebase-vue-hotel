@@ -12,7 +12,10 @@
         </button>
         <!-- Options -->
         <div class="flex w-full justify-end">
-          <div class="z-40 hidden gap-4 py-12" id="showHideContainer">
+          <div
+            class="absolute inset-0 z-40 hidden items-center justify-center gap-4 bg-white py-12"
+            id="showHideContainer"
+          >
             <button
               id="delete-button"
               class="z-10 cursor-pointer"
@@ -22,7 +25,7 @@
             </button>
 
             <button @click="statusPopup(room.roomId)" class="z-40 cursor-pointer">
-              <img src="../assets/options.svg" alt="options" />
+              <img src="../assets/status.svg" alt="options" />
             </button>
             <!-- Options popup -->
             <div
