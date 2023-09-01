@@ -3,12 +3,12 @@
     <RoomsContainer />
   </div>
   <div v-if="isLoggedIn == false">
-    <WelcomePageNotLoggedIn />
+    <HomePageNotLoggedIn />
   </div>
 </template>
 
 <script setup>
-import WelcomePageNotLoggedIn from '../components/WelcomePageNotLoggedIn.vue'
+import HomePageNotLoggedIn from '../components/HomePageNotLoggedIn.vue'
 import RoomsContainer from '../components/RoomsContainer.vue'
 
 import { ref } from 'vue'
