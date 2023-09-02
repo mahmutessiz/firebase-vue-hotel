@@ -11,7 +11,7 @@
       <AddOptionsPopup id="popup-menu-add" class="hidden" />
 
       <ul class="flex w-full items-center justify-end gap-4 px-4 py-2">
-        <li class="rounded-md px-2 py-1 text-lg transition-all duration-200 hover:shadow-md">
+        <li class="rounded-md px-2 py-1 transition-all duration-200 hover:shadow-md">
           <RouterLink to="/">Home</RouterLink>
         </li>
         <li>
@@ -30,18 +30,21 @@
         <li class="cursor-pointer">
           <RouterLink
             to="/"
-            class="rounded-md px-2 py-1 text-lg transition-all duration-200 hover:shadow-md"
+            class="rounded-md px-2 py-1 transition-all duration-200 hover:shadow-md"
           >
             Home</RouterLink
           >
         </li>
-        <li class="rounded-md px-2 py-1 text-lg transition-all duration-200 hover:shadow-md">
-          <RouterLink to="/signup">Sign up</RouterLink>
+        <li class="rounded-md px-2 py-1 transition-all duration-200 hover:shadow-md">
+          <RouterLink to="/pricing">Pricing</RouterLink>
+        </li>
+        <li class="rounded-md px-2 py-1 transition-all duration-200 hover:shadow-md">
+          <RouterLink to="/about">About</RouterLink>
         </li>
         <li>
           <RouterLink
             to="/login"
-            class="mt-4 rounded-md bg-orange-400 px-4 py-2 text-lg hover:shadow-md hover:shadow-black/50"
+            class="mt-4 rounded-md bg-orange-400 px-4 py-2 hover:shadow-md hover:shadow-black/50"
           >
             Sign in</RouterLink
           >
