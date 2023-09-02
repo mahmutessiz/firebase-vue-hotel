@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full">
-    <div class="bg-white">
+  <div class="grid w-full place-items-center lg:h-[100vh]">
+    <div class="w-full bg-white">
       <div class="container mx-auto px-6 py-8">
         <div
           class="flex flex-col items-center justify-center space-y-8 lg:-mx-4 lg:flex-row lg:items-stretch lg:space-y-0"
