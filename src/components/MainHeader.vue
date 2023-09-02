@@ -41,7 +41,7 @@
         <li>
           <RouterLink
             to="/login"
-            class="rounded-md bg-green-500 px-2 py-1 text-lg shadow-sm shadow-black/50 transition-all duration-200 hover:bg-green-600"
+            class="mt-4 rounded-md bg-orange-400 px-4 py-2 text-lg hover:shadow-md hover:shadow-black/50"
           >
             Sign in</RouterLink
           >

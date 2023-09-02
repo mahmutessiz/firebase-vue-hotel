@@ -18,7 +18,7 @@
     </section>
     <section class="mt-12">
       <div class="mt-4 flex flex-wrap-reverse items-center justify-center gap-4 p-4">
-        <p class="px-4 text-lg md:w-[40%]">
+        <p class="px-4 md:w-[40%]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
           suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis quae
           sint repudiandae. Qui iure cum quidem?
@@ -29,23 +29,23 @@
         />
       </div>
     </section>
-    <section class="mt-12">
+    <section class="mt-12 border-t">
       <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4">
         <img
           src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
           alt=""
           class=""
         />
-        <p class="px-4 text-lg md:w-[40%]">
+        <p class="px-4 md:w-[40%]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
           suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis quae
           sint repudiandae. Qui iure cum quidem?
         </p>
       </div>
     </section>
-    <section class="mt-12">
+    <section class="mt-12 border-t">
       <div class="mt-4 flex flex-wrap-reverse items-center justify-center gap-4 p-4">
-        <p class="px-4 text-lg md:w-[40%]">
+        <p class="px-4 md:w-[40%]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
           suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis quae
           sint repudiandae. Qui iure cum quidem?
@@ -63,19 +63,28 @@
           repudiandae ullam, facilis ipsum consequatur non velit veritatis aliquam illum mollitia
           commodi deserunt, necessitatibus sunt modi, tempore autem nihil.
         </p>
-        <button
-          class="mt-4 rounded-md bg-green-500 px-4 py-2 hover:shadow-md hover:shadow-black/50"
+        <RouterLink
+          to="/signup"
+          class="mt-4 rounded-md bg-orange-400 px-4 py-2 hover:shadow-md hover:shadow-black/50"
         >
-          Sign Up
-        </button>
+          Join us
+        </RouterLink>
       </div>
     </section>
     <footer class="flex flex-wrap items-center justify-center gap-4 border-t py-8">
       <div class="cursor-pointer transition-all duration-300 hover:text-blue-900">Home</div>
       <div class="cursor-pointer transition-all duration-300 hover:text-blue-900">About</div>
-      <div class="cursor-pointer transition-all duration-300 hover:text-blue-900">Pricing</div>
-      <div class="cursor-pointer transition-all duration-300 hover:text-blue-900">contact</div>
+      <RouterLink
+        to="/pricing"
+        class="cursor-pointer transition-all duration-300 hover:text-blue-900"
+        >Pricing</RouterLink
+      >
+      <div class="cursor-pointer transition-all duration-300 hover:text-blue-900">Contact</div>
       <p class="flex w-full justify-center">2023&copy; all right reserved</p>
     </footer>
   </div>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
