@@ -80,7 +80,7 @@
         >Pricing</RouterLink
       >
       <div class="cursor-pointer transition-all duration-300 hover:text-blue-900">Contact</div>
-      <p class="flex w-full justify-center">2023&copy; all right reserved</p>
+      <p class="flex w-full justify-center">&copy; 2023 All Rights Reserved</p>
     </footer>
   </div>
 </template>
