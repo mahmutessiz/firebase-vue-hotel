@@ -17,11 +17,16 @@
         sign in
       </button>
     </form>
+    <br />
+    <div>
+      <RouterLink to="/sugnup" class="font-bold text-blue-700">Sign up</RouterLink> if you don't
+      have an account.
+    </div>
   </div>
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
+import { useRouter, RouterLink } from 'vue-router'
 
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/firebase'
