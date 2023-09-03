@@ -16,7 +16,7 @@
         </div>
       </div>
     </section>
-    <section class="mt-12">
+    <section class="fade-in mt-12">
       <div class="mt-4 flex flex-wrap-reverse items-center justify-center gap-4 p-4">
         <p class="px-4 md:w-[40%]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
@@ -29,7 +29,7 @@
         />
       </div>
     </section>
-    <section class="mt-12 border-t">
+    <section class="fade-in mt-12 border-t">
       <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4">
         <img
           src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
@@ -43,7 +43,7 @@
         </p>
       </div>
     </section>
-    <section class="mt-12 border-t">
+    <section class="fade-in mt-12 border-t">
       <div class="mt-4 flex flex-wrap-reverse items-center justify-center gap-4 p-4">
         <p class="px-4 md:w-[40%]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
@@ -56,7 +56,7 @@
         />
       </div>
     </section>
-    <section class="my-12 grid w-full place-items-center">
+    <section class="fade-in my-12 grid w-full place-items-center">
       <div class="grid w-[90%] place-items-center rounded-md border p-4 md:w-[70%]">
         <p class="w-[70%]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor tempora praesentium
@@ -87,4 +87,19 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import useIntersectionObserver from '../composables/intersectionObserver'
+
+// Fade in animation from composable for sections
+useIntersectionObserver()
 </script>
+
+<style scoped>
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+</style>
