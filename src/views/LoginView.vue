@@ -19,7 +19,7 @@
     </form>
     <br />
     <div>
-      <RouterLink to="/sugnup" class="font-bold text-blue-700">Sign up</RouterLink> if you don't
+      <RouterLink to="/signup" class="font-bold text-blue-700">Sign up</RouterLink> if you don't
       have an account.
     </div>
   </div>
