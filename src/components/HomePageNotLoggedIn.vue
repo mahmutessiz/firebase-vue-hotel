@@ -71,7 +71,9 @@
         </RouterLink>
       </div>
     </section>
-    <footer class="flex flex-wrap items-center justify-center gap-4 border-t py-8">
+    <footer
+      class="flex flex-wrap items-center justify-center gap-4 border-t py-8 backdrop-blur-[2px]"
+    >
       <div class="cursor-pointer transition-all duration-300 hover:text-blue-900">Home</div>
       <div class="cursor-pointer transition-all duration-300 hover:text-blue-900">About</div>
       <RouterLink
