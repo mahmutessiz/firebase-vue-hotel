@@ -8,11 +8,11 @@
           The Best Hotel Management System
         </p>
         <div class="bg-black">
-          <img
+          <!--  <img
             src="https://th.bing.com/th/id/R.2168877d32fdd550a3e3187b918daee6?rik=4y1c4YqIxumGsg&pid=ImgRaw&r=0"
             class="absolute inset-0 -z-10 m-auto h-full w-full object-cover"
             alt=""
-          />
+          /> -->
         </div>
       </div>
     </section>
