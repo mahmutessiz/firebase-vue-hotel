@@ -1,14 +1,14 @@
 <template>
-  <div class="">
+  <div class="fixed inset-0 z-50 grid place-content-center">
     <div
       class="absolute inset-0 z-[49] grid place-content-center bg-red-900/30"
       id="close-popup-layer"
       @click="showHidePopup"
     ></div>
     <div
-      class="z-50 m-auto flex flex-col items-center rounded-md border-2 border-black bg-red-500 px-6 py-4"
+      class="z-50 m-auto flex w-60 flex-col items-center rounded-md border-2 border-black bg-red-500 px-6 py-4"
     >
-      <form action="" class="isolate z-50 flex flex-col items-center gap-2">
+      <form action="" class="z-50 flex flex-col items-center gap-2">
         <label for="room-number">Room number</label>
         <input type="text" id="room-number" /> <br />
 
