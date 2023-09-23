@@ -6,7 +6,7 @@
       @click="showHidePopup"
     ></div>
     <div
-      class="z-50 m-auto flex w-60 flex-col items-center rounded-md border-2 border-black bg-red-500 px-6 py-4"
+      class="w-68 z-50 m-auto flex flex-col items-center rounded-md border-2 border-black bg-red-500 px-6 py-4"
     >
       <form action="" class="z-50 flex flex-col items-center gap-2">
         <label for="room-number">Room number</label>
