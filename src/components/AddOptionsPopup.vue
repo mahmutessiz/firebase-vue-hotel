@@ -6,18 +6,24 @@
       @click="showHidePopup"
     ></div>
     <div
-      class="w-68 z-50 m-auto flex flex-col items-center rounded-md border-2 border-black bg-red-500 px-6 py-4"
+      class="w-68 z-50 m-auto flex flex-col items-center rounded-md border border-black/50 bg-green-500 px-6 py-4 shadow-lg shadow-black"
     >
       <form action="" class="z-50 flex flex-col items-center gap-2">
         <label for="room-number">Room number</label>
-        <input type="text" id="room-number" /> <br />
+        <input type="text" id="room-number" class="rounded-md px-2 py-1" /> <br />
 
         <label for="isOccupied">is ocuppied?</label>
-        <input type="text" id="isOccupied" placeholder=" true or false" /> <br />
+        <input
+          type="text"
+          id="isOccupied"
+          placeholder=" true or false"
+          class="rounded-md px-2 py-1"
+        />
+        <br />
         <input
           type="button"
           value="Submit"
-          class="border border-black px-2 py-1"
+          class="cursor-pointer rounded-md bg-green-800 px-3 py-2 text-white shadow-sm shadow-black/80 transition-all duration-300 hover:shadow-md hover:shadow-black/80"
           @click="addRoom"
         />
       </form>
