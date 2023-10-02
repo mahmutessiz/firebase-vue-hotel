@@ -12,7 +12,7 @@
         <label for="room-number">Room number</label>
         <input type="text" id="room-number" class="rounded-md px-2 py-1" /> <br />
 
-        <label for="isOccupied">is ocuppied?</label>
+        <label for="isOccupied"> Is this room ocuppied?</label>
         <input
           type="text"
           id="isOccupied"

@@ -5,7 +5,7 @@
         <p
           class="rounded-md bg-black/70 p-4 text-center font-mono text-3xl font-bold text-white sm:w-[70%] sm:text-5xl md:text-6xl"
         >
-          The Best Hotel Management System
+          Not The Best Hotel Management System
         </p>
         <div class="bg-black">
           <!--  <img
