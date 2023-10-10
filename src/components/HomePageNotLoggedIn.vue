@@ -11,7 +11,7 @@
             class="z-10 -mt-14 flex h-full flex-col items-center justify-center bg-slate-50/95 sm:mt-auto sm:w-[40%] sm:bg-transparent"
           >
             <p
-              class="slide-down-appear-text max-w-[700px] text-4xl font-bold md:text-6xl lg:text-7xl"
+              class="slide-down-appear-text max-w-[700px] text-4xl font-bold md:text-5xl lg:text-7xl"
             >
               Manage your hotel
               <span
@@ -20,7 +20,7 @@
               >
             </p>
             <transition appear name="slide-down-p">
-              <p class="slide-down-appear-p mt-5 max-w-[700px] text-black/80 sm:mt-9">
+              <p class="slide-down-appear-p mt-5 max-w-[700px] text-black/80 lg:mt-9">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab odio consequatur et
                 cumque totam commodi ut dolores doloremque aliquam facere. Lorem ipsum dolor sit
                 amet consectetur, adipisicing elit. Ab odio consequatur et cumque totam commodi ut
