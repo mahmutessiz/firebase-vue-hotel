@@ -161,7 +161,7 @@ useIntersectionObserver()
 
 @keyframes slide-down-p {
   from {
-    transform: translate(-100%, -100%);
+    transform: translate(100%, 100%);
   }
   to {
     transform: translate(0, 0);
