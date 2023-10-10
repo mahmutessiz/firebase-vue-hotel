@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full">
+  <header class="w-full bg-slate-50/95">
     <div class="flex w-full justify-end gap-4 border-b px-4 py-2" v-if="isLoggedIn == true">
       <button
         class="h-fit w-fit rounded-full hover:shadow-lg hover:shadow-black/50"
@@ -46,7 +46,7 @@
             to="/login"
             class="mt-4 rounded-md bg-orange-400 px-4 py-2 hover:shadow-md hover:shadow-black/50"
           >
-            Sign in</RouterLink
+            Login</RouterLink
           >
         </li>
       </ul>

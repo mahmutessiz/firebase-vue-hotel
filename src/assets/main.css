@@ -9,9 +9,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#app{
-    background-image: radial-gradient(#ffc247 1px, transparent 1px);
-background-size: 19px 19px;
-background-color: #ffffff;
-z-index: -51;
-}
+ #app{
+   @apply flex justify-center max-w-[2000px] m-auto;
+} 

@@ -1,18 +1,42 @@
 <template>
-  <div class="m-auto w-full max-w-[1440px]">
-    <section class="relative max-h-[100vh] w-full overflow-hidden lg:h-[80vh]">
-      <div class="flex h-full w-full flex-wrap items-center justify-center gap-4 p-4">
-        <p
-          class="rounded-md bg-black/70 p-4 text-center font-mono text-3xl font-bold text-white sm:w-[70%] sm:text-5xl md:text-6xl"
-        >
-          Not The Best Hotel Management System
-        </p>
-        <div class="bg-black">
-          <!--  <img
-            src="https://th.bing.com/th/id/R.2168877d32fdd550a3e3187b918daee6?rik=4y1c4YqIxumGsg&pid=ImgRaw&r=0"
-            class="absolute inset-0 -z-10 m-auto h-full w-full object-cover"
-            alt=""
-          /> -->
+  <div class="m-auto w-full">
+    <section
+      class="flex max-h-[1080px] w-full items-center justify-center overflow-hidden bg-slate-50/95 lg:h-[80vh]"
+    >
+      <div
+        class="flex h-full w-full flex-wrap-reverse items-center justify-center gap-4 p-4 md:flex-nowrap"
+      >
+        <transition appear name="slide-down-text">
+          <div
+            class="z-10 -mt-14 flex h-full flex-col items-center justify-center bg-slate-50/95 sm:mt-auto sm:w-[40%] sm:bg-transparent"
+          >
+            <p
+              class="slide-down-appear-text max-w-[700px] text-4xl font-bold md:text-6xl lg:text-7xl"
+            >
+              Manage your hotel
+              <span
+                class="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent"
+                >easily!</span
+              >
+            </p>
+            <transition appear name="slide-down-p">
+              <p class="slide-down-appear-p mt-5 max-w-[700px] text-black/80 sm:mt-9">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab odio consequatur et
+                cumque totam commodi ut dolores doloremque aliquam facere. Lorem ipsum dolor sit
+                amet consectetur, adipisicing elit. Ab odio consequatur et cumque totam commodi ut
+                dolores doloremque aliquam facere.
+              </p>
+            </transition>
+          </div>
+        </transition>
+        <div class="sm:w-[50%]">
+          <transition appear name="slide-down-hero-img">
+            <img
+              class="animation rounded-lg md:rounded-md"
+              src="../assets/images/reception-min.webp"
+              alt="reception image"
+            />
+          </transition>
         </div>
       </div>
     </section>
@@ -103,5 +127,44 @@ useIntersectionObserver()
 
 .fade-in.show {
   opacity: 1;
+}
+
+.animation {
+  animation: slide-down-hero-img 1s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes slide-down-hero-img {
+  from {
+    transform: translate(-100%, -100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.slide-down-appear-text {
+  animation: slide-down-text 1s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes slide-down-text {
+  from {
+    transform: translate(-100%, 100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.slide-down-appear-p {
+  animation: slide-down-p 1s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes slide-down-p {
+  from {
+    transform: translate(-100%, -100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
 }
 </style>
