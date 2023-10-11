@@ -10,5 +10,5 @@
 }
 
  #app{
-   @apply flex justify-center max-w-[2000px] m-auto;
+   @apply flex justify-center max-w-[2000px] m-auto w-full bg-slate-50/95;
 } 

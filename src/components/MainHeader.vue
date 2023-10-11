@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-slate-50/95">
+  <header class="w-full">
     <div class="flex w-full justify-end gap-4 border-b px-4 py-2" v-if="isLoggedIn == true">
       <button
         class="h-fit w-fit rounded-full hover:shadow-lg hover:shadow-black/50"

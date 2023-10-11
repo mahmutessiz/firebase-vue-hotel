@@ -10,7 +10,7 @@
           <div
             class="z-10 -mt-14 flex h-full flex-col items-center justify-center bg-slate-50/95 sm:mt-auto sm:w-[40%] sm:bg-transparent"
           >
-            <p
+            <h1
               class="slide-down-appear-text max-w-[700px] text-4xl font-bold md:text-5xl lg:text-7xl"
             >
               Manage your hotel
@@ -18,7 +18,7 @@
                 class="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent"
                 >easily!</span
               >
-            </p>
+            </h1>
             <transition appear name="slide-down-p">
               <p class="slide-down-appear-p mt-5 max-w-[700px] text-black/80 lg:mt-9">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab odio consequatur et
@@ -40,44 +40,55 @@
         </div>
       </div>
     </section>
-    <section class="fade-in mt-12">
-      <div class="mt-4 flex flex-wrap-reverse items-center justify-center gap-4 p-4">
-        <p class="px-4 md:w-[40%]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
-          suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis quae
-          sint repudiandae. Qui iure cum quidem?
-        </p>
+    <section class="fade-in mt-12 py-6">
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4 sm:flex-nowrap">
         <img
+          class="rounded-md"
+          src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
+          alt=""
+        />
+        <div class="px-2 md:w-[40%]">
+          <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Easy to use.</h2>
+          <p class="">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
+            suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis
+            quae sint repudiandae. Qui iure cum quidem?
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="fade-in mt-12 py-6">
+      <div class="mt-4 flex flex-wrap-reverse items-center justify-center gap-4 p-4 sm:flex-nowrap">
+        <div class="px-2 md:w-[40%]">
+          <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Easy to manage.</h2>
+          <p class="">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
+            suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis
+            quae sint repudiandae. Qui iure cum quidem?
+          </p>
+        </div>
+        <img
+          class="rounded-md"
           src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
           alt=""
         />
       </div>
     </section>
-    <section class="fade-in mt-12 border-t">
-      <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4">
+    <section class="fade-in mt-12 py-6">
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-4 p-4 sm:flex-nowrap">
         <img
-          src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
-          alt=""
-          class=""
-        />
-        <p class="px-4 md:w-[40%]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
-          suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis quae
-          sint repudiandae. Qui iure cum quidem?
-        </p>
-      </div>
-    </section>
-    <section class="fade-in mt-12 border-t">
-      <div class="mt-4 flex flex-wrap-reverse items-center justify-center gap-4 p-4">
-        <p class="px-4 md:w-[40%]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
-          suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis quae
-          sint repudiandae. Qui iure cum quidem?
-        </p>
-        <img
+          class="rounded-md"
           src="https://th.bing.com/th/id/OIP.U16dXVXFDPhpbTMd03hbUgHaE8?pid=ImgDet&rs=1"
           alt=""
         />
+        <div class="px-2 md:w-[40%]">
+          <h2 class="mb-4 text-2xl font-bold md:text-3xl lg:text-5xl">Easy to track.</h2>
+          <p class="">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ut laudantium
+            suscipit tempore inventore accusantium qui ullam tenetur ab, adipisci omnis fuga quis
+            quae sint repudiandae. Qui iure cum quidem?
+          </p>
+        </div>
       </div>
     </section>
     <section class="fade-in my-12 grid w-full place-items-center">
