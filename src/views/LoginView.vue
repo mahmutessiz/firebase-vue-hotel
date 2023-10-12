@@ -5,12 +5,14 @@
       <input
         type="email"
         id="email"
+        autocomplete="email"
         class="rounded-md border border-black px-2 shadow-sm shadow-black/20"
       />
       <label for="password">password</label>
       <input
         type="password"
         id="password"
+        autocomplete="current-password"
         class="rounded-md border border-black px-2 shadow-sm shadow-black/20"
       />
       <button class="rounded-md bg-gray-600 px-2 py-1 text-white hover:bg-slate-700">
