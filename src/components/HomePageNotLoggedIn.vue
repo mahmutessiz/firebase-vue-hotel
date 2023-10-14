@@ -33,7 +33,7 @@
           <transition appear name="slide-down-hero-img">
             <img
               class="animation rounded-lg md:rounded-md"
-              src="../assets/images/reception-min.webp"
+              src="../assets/images/reception.webp"
               alt="reception image"
             />
           </transition>
