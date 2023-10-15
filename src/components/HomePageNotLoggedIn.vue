@@ -34,6 +34,7 @@
             <img
               class="animation rounded-lg md:rounded-md"
               src="../assets/images/reception.webp"
+              loading="eager"
               alt="reception image"
             />
           </transition>
